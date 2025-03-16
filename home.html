@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">Student Portal</div>
+        <ul>
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Courses</a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><button class="logout-btn" onclick="logout()">Logout</button></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <h1 id="welcomeMessage"></h1>
+        <p>🎓 Welcome to the Student Portal! Here you can access your courses, view assignments, and manage your profile.</p>
+
+        <div class="card-container">
+            <div class="card">
+                <h2>📚 My Courses</h2>
+                <p>Access all your enrolled courses and track your progress.</p>
+                <button class="btn">View Courses</button>
+            </div>
+
+            <div class="card">
+                <h2>📝 Assignments</h2>
+                <p>Check pending assignments and submit them on time.</p>
+                <button class="btn">View Assignments</button>
+            </div>
+
+            <div class="card">
+                <h2>🔍 Profile</h2>
+                <p>Update your personal details and manage your account.</p>
+                <button class="btn">Edit Profile</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Fetch username from localStorage and display it
+        document.getElementById("welcomeMessage").innerText = "Hi, " + localStorage.getItem("username") + "!";
+
+        function logout() {
+            localStorage.removeItem("username"); // Remove stored name
+            window.location.href = "index.html"; // Redirect to login page
+        }
+    </script>
+</body>
+</html>
